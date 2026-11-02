@@ -1,21 +1,13 @@
 # Creating a Koth
 
-1. Select the zone with the wand: `/koth wand`
+1. Select the zone with the wand: `/nzkoth wand` by `left-click` and `right-click` the corners.
 2. Create the koth:
 
 ```bash
-/koth create <name>
+/nzkoth create <name>
 ```
 
-3. Edit its settings in `plugins/NzKoth/koths/<name>.yml`:
-
-```yaml title="koths/castle.yml"
-display-name: "&6Castle"
-capture-time: 300 # seconds
-rewards:
-  - "eco give %player% 5000"
-  - "crate key give %player% legendary 1"
+3. Now you can edit the Koth settings:
+```bash
+/nzkoth edit <name>
 ```
-
-> [!WARNING]
-> Run `/koth reload` after editing the file.

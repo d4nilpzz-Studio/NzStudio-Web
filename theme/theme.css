@@ -32,8 +32,8 @@
   --border-strong: #474747;
 
   /* Accent color (active item, links, TOC) */
-  --accent: #3b82f6;
-  --accent-hover: #60a5fa;
+  --accent: #3babf6;
+  --accent-hover: #60c9fa;
   --accent-text: #ffffff;        /* text on top of the accent */
   --icon-color: #a3a3a3;         /* Lucide icons in the sidebar and breadcrumbs */
 
@@ -107,8 +107,8 @@ body {
   text-decoration: none;
 }
 .header-logo {
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
 }
 .header-actions {

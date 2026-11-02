@@ -7,6 +7,7 @@ import { basePath, wikiConfig } from "@/wiki.config";
 import Sidebar, { type NavNode } from "@/components/Sidebar";
 import Search from "@/components/Search";
 import MobileNavToggle from "@/components/MobileNavToggle";
+import { CodeXml } from "lucide-react";
 import Icon from "@/components/Icon";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -39,8 +40,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <img src={`${basePath}${wikiConfig.logo}`} alt="" className="header-logo" />
             <span>{wikiConfig.name}</span>
           </Link>
-          <div className="header-actions">
-            <Search />
+          <div className="flex items-center justify-end gap-2 ml-auto">
+            <div className="header-actions">
+              <Search />
+            </div>
+            <a className="header-btn" target="_blank" href="https://github.com/d4nilpzz-Studio">
+              <CodeXml />
+            </a>
           </div>
         </header>
         <div className="wiki-shell">

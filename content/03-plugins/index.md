@@ -3,4 +3,7 @@ title: Plugin Documentation
 icon: puzzle
 ---
 
-Pick a plugin from the sidebar.
+What plugin wiki you want to see?
+
+- [NzKoth](./nzkoth)
+- [NzTrialVaults](./nztrialvaults)

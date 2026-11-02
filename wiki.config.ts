@@ -1,6 +1,6 @@
 // General wiki settings. Colors and styles live in theme/theme.css.
 export const wikiConfig = {
-  name: "Nz Studio Documentation",
+  name: "Studio Documentation",
   shortName: "Nz Studio",
   description: "Documentation for Nz Studio plugins",
   // Path inside /public
