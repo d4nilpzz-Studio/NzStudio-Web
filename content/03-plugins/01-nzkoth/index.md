@@ -4,8 +4,6 @@ title: NzKoth
 
 NzKoth the best **King of the Hill** events to your server.
 
-<a target="_blank" href="/">BUY NOW</a>
-
 Available for `1.21^` builtin version `26.2`
 
 ## Features
