@@ -1,20 +1,28 @@
 # Commands
 
-| Command | Permission | Description |
-| --- | --- | --- |
-| `/nzkoth wand` | `nzkoth.wand` | Give the select wand |
-| `/nzkoth create <koth> <mode>` | `nzkoth.create` | Create a koth |
-| `/nzkoth delete <koth>` | `nzkoth.delete` | Delete a koth |
-| `/nzkoth start <koth>` | `nzkoth.start` | Start a koth |
-| `/nzkoth stop` | `nzkoth.stop` | Stop a koth |
-| `/nzkoth stopall` | `nzkoth.stopall` | stopall koth |
-| `/nzkoth editor` | `nzkoth.editor` | Edit a koth |
-| `/nzkoth schedule` | `nzkoth.schedule` | Schedule a koth |
-| `/nzkoth tp <koth>` | `nzkoth.tp` | Teleport player to koth |
-| `/nzkoth list` | `nzkoth.list` | List all the koths |
-| `/nzkoth givestarter <koth> <player> [amount]` | `nzkoth.givestarter` | Give to player the koth item starter |
-| `/nzkoth reload` | `nzkoth.reload` | Reload the plugin |
-| `/nzkoth resetwins <player>` | `nzkoth.resetwins` | Reset koth wins of player |
-| `/nzkoth top <board>` | `nzkoth.resetwins` | Top koth players |
+All commands need the permission `nzkoth.admin` (given to OPs by default).
 
-See also the [placeholders](./03-placeholders.md).
+| Command | Description |
+| --- | --- |
+| `/nzkoth wand` | Give the selection wand |
+| `/nzkoth create <koth> <mode>` | Create a koth from your selection. Modes: `CAPTURE`, `SCORE` |
+| `/nzkoth delete <koth>` | Delete a koth (stops it if running) |
+| `/nzkoth start <koth>` | Start a koth |
+| `/nzkoth stop <koth>` | Stop a running koth |
+| `/nzkoth stopall` | Stop every running koth |
+| `/nzkoth editor <koth>` | Open the GUI editor of a koth |
+| `/nzkoth schedulers` | Open the [scheduler](./06-schedulers.md) GUI |
+| `/nzkoth tp <koth>` | Teleport to the koth spawn |
+| `/nzkoth list` | List all koths with their mode, state and region |
+| `/nzkoth givestarter <koth> <player> [amount]` | Give a starter item. Right-click it to start the koth |
+| `/nzkoth top [board]` | Top 10 players of a [leaderboard](./07-leaderboards.md). Default: `alltime` |
+| `/nzkoth resetwins <player>` | Reset the wins of a player in every leaderboard |
+| `/nzkoth reload` | Reload the config, messages, koths and schedulers |
+
+## Permissions
+
+| Permission | Description | Default |
+| --- | --- | --- |
+| `nzkoth.admin` | Access to every `/nzkoth` command | `op` |
+
+See also the [placeholders](./04-placeholders.md).

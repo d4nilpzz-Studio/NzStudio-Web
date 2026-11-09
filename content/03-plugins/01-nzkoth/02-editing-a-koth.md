@@ -1,44 +1,55 @@
 # Editing a Koth
 
-1. You can edit a koth by the config file or with the command:
+You can edit a koth with the GUI editor or in its file `plugins/NzKoth/koths/<koth>.yml` (run `/nzkoth reload` after editing the file).
+
 ```bash
 /nzkoth editor <koth>
 ```
 
-### Mode
+## Modes
 
- - CAPTURE
+ - `CAPTURE`
 
-You must stay in the koth zone for x seconds without getting knocked out. The winner is the player, who can stay in for the whole capture time.
+Stay in the koth zone for the whole capture time without anyone else inside. If another player enters, the koth is **contested** and the timer pauses. If you leave, the timer resets (see `reset-on-leave`). The first player to finish the capture time wins.
 
- - SCORE
+ - `SCORE`
 
-For every second a player stays in the zone, they will gain 1 point (only 1 player can get points at once) - if you get knocked out, the points stay and after either the time runs out or you reach a set time, the winner will be the player with the most points.
+For every second a player is alone in the zone, they gain 1 point. When the zone is contested nobody gets points. If you get knocked out, your points stay. The koth ends when a player reaches the target score or the max time runs out, and the winner is the player with the most points.
 
-### Capture Time
+## GUI editor
 
-This indicates how much time a player has to stay inside the koth to win, by default: `300s`
+| Option | Description | Default |
+| --- | --- | --- |
+| Mode | Switch between `CAPTURE` and `SCORE` | - |
+| Capture time | Seconds a player has to hold the zone to win (`CAPTURE`) | `300` |
+| Target score | Points a player needs to win (`SCORE`) | `300` |
+| Max time | Max duration of the koth in seconds (`SCORE`) | `900` |
+| Boss bar | `show` / `hide` | `show` |
+| Broadcast | `enable` / `disable` the chat messages | `enable` |
+| Hologram | `enable` / `disable` the hologram above the zone | `enable` |
+| View distance | Blocks around the koth where players see the boss bar, scoreboard and messages. `-1` = the whole world | `-1` |
+| Winner crown | `enable` / `disable` | `enable` |
+| Crown model | Item and custom model data of the crown. Press `Q` to reset to the resource pack crown | resource pack |
+| Crown glow | Full bright crown | `enable` |
+| Crown enchant glint | Enchant glint on the crown | `disable` |
+| Crown outline | Glowing outline and its color: `gold`, `yellow`, `red`, `aqua`, `green`, `light_purple`, `white`, `blue` | `enable`, `gold` |
+| Crown height | Blocks above the winner's head | `2.2` |
+| Rewards | Opens the [rewards](./05-rewards.md) editor | - |
 
-### Target Score
+## File only options
 
-This indicates how much point a player has to collect to win, by default: `300`
+These options are only in the koth file:
 
-### Max Time
+```yaml
+settings:
+  display-name: '<red>Castle'  # MiniMessage name used in holograms and placeholders
+  reset-on-leave: true         # CAPTURE: reset the timer when the capturer leaves
+  team-mode: false             # Show the capturer's team (see Configuration > Teams)
+display:
+  scoreboard: true
+  same-world-only: false       # Only players in the koth world see it
+crown:
+  spin-ticks: 40               # Ticks for a full spin of the crown
+```
 
-This is the maximun duration of the koth by default: `900s`
-
-### Toggles
- - Boss Bar `show` / `hide`
- - Broadcast `enable` / `disable`
- - Winner Crown `enable` / `disable`
- - Crown Custom Model Data `1001` - `1003` with the texturepack
- - Crown Full Bright `enable` / `disable`
- - Crown Enchant Glint `enable` / `disable`
- - Crown Outline `enable` / `disable`
- - Crown Outline Color `previus` / `next`
- - Crown Height `2.5` by default
-
-
-### Rewards
-
-Customize command rewards and messages with the chest icon called `Rewards`
+How long the crown stays over the winner is set in `config.yml` with `crown.duration-ticks` (default `200` = 10 seconds).
